@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/midoks/golang-try/gtest"
+	"github.com/midoks/golang-try/test"
 )
 
 var (
