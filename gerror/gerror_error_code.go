@@ -7,7 +7,7 @@
 package gerror
 
 import (
-	"gtry/gcode"
+	"github.com/midoks/golang-try/gcode"
 )
 
 // Code returns the error code.

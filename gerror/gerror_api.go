@@ -9,7 +9,7 @@ package gerror
 import (
 	"fmt"
 
-	"gtry/gcode"
+	"github.com/midoks/golang-try/gcode"
 )
 
 // New creates and returns an error which is formatted from given text.

@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	"gtry/gcode"
+	"github.com/midoks/golang-try/gcode"
 )
 
 // Error is custom error for additional features.

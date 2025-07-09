@@ -9,8 +9,8 @@ package gtry
 import (
 	"context"
 
-	"gtry/gcode"
-	"gtry/gerror"
+	"github.com/midoks/golang-try/gcode"
+	"github.com/midoks/golang-try/gerror"
 )
 
 // Throw throws out an exception, which can be caught be TryCatch or recover.

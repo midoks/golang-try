@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"strings"
 
-	"gtry/gcode"
+	"github.com/midoks/golang-try/gcode"
 )
 
 // NewCode creates and returns an error that has error code and given text.

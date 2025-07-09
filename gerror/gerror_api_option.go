@@ -6,7 +6,7 @@
 
 package gerror
 
-import "gtry/gcode"
+import "github.com/midoks/golang-try/gcode"
 
 // Option is option for creating error.
 type Option struct {

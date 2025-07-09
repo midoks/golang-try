@@ -4,6 +4,8 @@ import (
 	"context"
 	"fmt"
 	"testing"
+
+	"github.com/midoks/golang-try/gtest"
 )
 
 var (
@@ -11,19 +13,42 @@ var (
 )
 
 func Test_Try(t *testing.T) {
-	s := `gutil Try test`
-	err := Try(ctx, func(ctx context.Context) {
-		panic(s)
+	gtest.C(t, func(t *gtest.T) {
+		s := `gutil Try test`
+		t.Assert(Try(ctx, func(ctx context.Context) {
+			panic(s)
+		}), s)
 	})
-
-	fmt.Println(err)
+	gtest.C(t, func(t *gtest.T) {
+		s := `gutil Try test`
+		t.Assert(Try(ctx, func(ctx context.Context) {
+			panic(gerror.New(s))
+		}), s)
+	})
 }
 
 func Test_TryCatch(t *testing.T) {
-	TryCatch(ctx, func(ctx context.Context) {
-		panic("gutil TryCatch test")
-	}, func(ctx context.Context, err error) {
-		fmt.Println("Test_TryCatch:", err)
-		// t.Assert(err, "gutil TryCatch test")
+	gtest.C(t, func(t *gtest.T) {
+		TryCatch(ctx, func(ctx context.Context) {
+			panic("gutil TryCatch test")
+		}, nil)
+	})
+
+	gtest.C(t, func(t *gtest.T) {
+		TryCatch(ctx, func(ctx context.Context) {
+			panic("gutil TryCatch test")
+
+		}, func(ctx context.Context, err error) {
+			t.Assert(err, "gutil TryCatch test")
+		})
+	})
+
+	gtest.C(t, func(t *gtest.T) {
+		TryCatch(ctx, func(ctx context.Context) {
+			panic(gerror.New("gutil TryCatch test"))
+
+		}, func(ctx context.Context, err error) {
+			t.Assert(err, "gutil TryCatch test")
+		})
 	})
 }

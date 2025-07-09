@@ -12,7 +12,7 @@
 package gerror
 
 import (
-	"gtry/gcode"
+	"github.com/midoks/golang-try/gcode"
 )
 
 // IEqual is the interface for Equal feature.
